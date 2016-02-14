@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Grunt-evil-icons by jadjac1</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Grunt-evil-icons</h1>
+        <h2>Grunt plugin to use Evil Icons in your project</h2>
+        <a href="https://github.com/jadjac1/grunt-evil-icons" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="grunt-evil-icons" class="anchor" href="#grunt-evil-icons" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>grunt-evil-icons</h1>
+
+<p>This plugin allows to use <a href="http://evil-icons.io">Evil Icons</a> in your project with Grunt.</p>
+
+<p align="center"><a href="https://evilmartians.com/">
+<img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg" alt="Sponsored by Evil Martians" width="236" height="54">
+</a></p>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>If you haven't used <a href="http://gruntjs.com/">Grunt</a> before, be sure to check out
+the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains
+how to create a <a href="http://gruntjs.com/sample-gruntfile">Gruntfile</a> as well
+as install and use Grunt plugins. Once you're familiar with that process,
+you may install this plugin with this command:</p>
+
+<div class="highlight highlight-source-shell"><pre>npm install grunt-evil-icons --save-dev</pre></div>
+
+<p>Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">grunt</span>.<span class="pl-en">loadNpmTasks</span>(<span class="pl-s"><span class="pl-pds">'</span>grunt-evil-icons<span class="pl-pds">'</span></span>);</pre></div>
+
+<h2>
+<a id="the-evil_icons-task" class="anchor" href="#the-evil_icons-task" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The "evil_icons" task</h2>
+
+<h3>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h3>
+
+<p>In your project's Gruntfile, add a section named <code>evil_icons</code> to the data object passed into <code>grunt.initConfig()</code>.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">grunt</span>.<span class="pl-en">initConfig</span>({
+  evil_icons<span class="pl-k">:</span> {
+    dist<span class="pl-k">:</span> {
+      files<span class="pl-k">:</span> {
+        <span class="pl-s"><span class="pl-pds">"</span>build/index.html<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>src/index.html<span class="pl-pds">"</span></span>
+      }
+    }
+  }
+});</pre></div>
+
+<h3>
+<a id="using-icons" class="anchor" href="#using-icons" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using icons</h3>
+
+<p>Once you have added the <code>evil_icons</code> section to your Gruntfile, you can use
+the icons in your html with the <code>icon</code> tag:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">icon</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>ei-archive<span class="pl-pds">"</span></span> /&gt;
+&lt;<span class="pl-ent">icon</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>ei-chart<span class="pl-pds">"</span></span> <span class="pl-e">size</span>=<span class="pl-s"><span class="pl-pds">"</span>s<span class="pl-pds">"</span></span> /&gt;
+&lt;<span class="pl-ent">icon</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>ei-check<span class="pl-pds">"</span></span> <span class="pl-e">size</span>=<span class="pl-s"><span class="pl-pds">"</span>m<span class="pl-pds">"</span></span> /&gt;
+&lt;<span class="pl-ent">icon</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>ei-cart<span class="pl-pds">"</span></span> <span class="pl-e">size</span>=<span class="pl-s"><span class="pl-pds">"</span>l<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span> /&gt;</pre></div>
+
+<p>The sprite will be added to your html automatically, and the <code>icon</code> tags will
+be replaced with actual SVG code.</p>
+
+<p>The only thing you have to add to your code explicitly is the stylesheet:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>./node_modules/grunt-evil-icons/node_modules/assets/evil-icons.css<span class="pl-pds">"</span></span>&gt;</pre></div>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/jadjac1/grunt-evil-icons/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/jadjac1/grunt-evil-icons/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/jadjac1/grunt-evil-icons"></a> is maintained by <a href="https://github.com/jadjac1">jadjac1</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
